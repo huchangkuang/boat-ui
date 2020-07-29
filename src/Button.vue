@@ -1,5 +1,7 @@
 <template>
-    <button>按钮</button>
+    <button>
+        <slot/>
+    </button>
 </template>
 
 <script>
@@ -9,7 +11,22 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "styles/helper";
 button{
-    border: 1px solid red;
+    font-size: $font-size;
+    height: $button-height;
+    padding: 0 1em;
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    background: $button-bg;
+    &:hover {
+        border-color: $border-color-hover;
+    }
+    &:active {
+        background-color: $button-active-bg;
+    }
+    &:focus {
+        outline: none;
+    }
 }
 </style>
