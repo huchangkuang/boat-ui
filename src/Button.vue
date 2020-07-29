@@ -1,13 +1,25 @@
 <template>
-    <button>
-        <b-icon/>
-        <slot/>
+    <button class="b-button" :class="{[`icon-${iconPosition}`]:true}">
+        <b-icon :icon="icon"></b-icon>
+        <div class="button-content">
+            <slot/>
+        </div>
     </button>
 </template>
 
 <script>
   export default {
-    name: "Button"
+    name: "Button",
+    props: {
+      iconPosition: {
+        type: String,
+        default: "left",
+        validator(value){
+          return value=== "left" || value==="right"
+        }
+      },
+      icon:{}
+    }
   }
 </script>
 
@@ -21,17 +33,34 @@
         border-radius: $border-radius;
         border: 1px solid $border-color;
         background: $button-bg;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
 
-        &:hover {
-            border-color: $border-color-hover;
+        > .b-icon {
+            order: 1;
         }
 
-        &:active {
-            background-color: $button-active-bg;
+        > .button-content {order: 2;
+            margin-left: .5em;
         }
 
-        &:focus {
-            outline: none;
+        &.icon-right {
+            .b-icon {
+                order: 2;
+                margin-left: .5em;
+            }
+
+            .button-content {
+                order: 1;
+            }
         }
+
+        &:hover {border-color: $border-color-hover;}
+
+        &:active {background-color: $button-active-bg;}
+
+        &:focus {outline: none;}
     }
 </style>
