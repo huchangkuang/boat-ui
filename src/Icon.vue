@@ -1,6 +1,6 @@
 <template>
-    <svg class="icon">
-        <use xlink:href="#i-setting"></use>
+    <svg class="b-icon">
+        <use :xlink:href="`#i-${icon}`"></use>
     </svg>
 </template>
 
@@ -8,12 +8,13 @@
   import "./svg"
 
   export default {
-    name: "Icon"
+    name: "Icon",
+    props: ["icon"]
   }
 </script>
 
 <style lang="scss" scoped>
-    .icon {
+    .b-icon {
         width: 1em;
         height: 1em;
     }
