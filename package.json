@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/huchangkuang/boat-ui/issues"
   },
-  "homepage": "https://github.com/huchangkuang/boat-ui#readme"
+  "homepage": "https://github.com/huchangkuang/boat-ui#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
