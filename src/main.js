@@ -15,7 +15,14 @@ new Vue({
     return {
       loading1: false,
       loading2: false,
-      loading3: false
+      loading3: false,
+      value1:"",
+      value2:""
+    }
+  },
+  methods:{
+    change(event){
+      this.value2 = event
     }
   }
 })
