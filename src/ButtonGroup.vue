@@ -6,7 +6,15 @@
 
 <script>
   export default{
-    name: "ButtonGroup"
+    name: "ButtonGroup",
+    mounted() {
+      for (let node of this.$el.children){
+        const name = node.nodeName.toLowerCase()
+        if (name !== "button"){
+          console.warn(`b-button-group的子元素必须是b-button,但你传的是${name}`)
+        }
+      }
+    }
   }
 </script>
 
