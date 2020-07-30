@@ -3,7 +3,6 @@ import Button from "./Button";
 import Icon from "./Icon";
 import ButtonGroup from "./ButtonGroup";
 
-
 Vue.component("b-button",Button)
 Vue.component("b-icon",Icon)
 Vue.component("b-button-group",ButtonGroup)
@@ -18,3 +17,4 @@ new Vue({
     }
   }
 })
+
