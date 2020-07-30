@@ -1,7 +1,7 @@
 <template>
     <button class="b-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
-        <b-icon class="loading" v-if="loading" icon="loading"></b-icon>
-        <b-icon v-if="icon && !loading" :icon="icon"></b-icon>
+        <Icon class="loading" v-if="loading" icon="loading"></Icon>
+        <Icon v-if="icon && !loading" :icon="icon"></Icon>
         <div class="button-content">
             <slot/>
         </div>
@@ -52,12 +52,12 @@
             animation: spin 1s infinite linear;
         }
 
-        > .b-icon {order: 1;margin-right: 0.5em}
+        > .Icon {order: 1;margin-right: 0.5em}
 
         > .button-content {order: 2;}
 
         &.icon-right {
-            .b-icon {
+            .Icon {
                 order: 2;
                 margin-left: .5em;margin-right: 0;
             }
