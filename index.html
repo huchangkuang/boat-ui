@@ -17,14 +17,20 @@
 </head>
 <body>
     <div id="app">
-        <b-row>
-            <b-col></b-col>
-            <b-col></b-col>
-        </b-row>
-        <b-row>
-            <b-col span="2"></b-col>
-            <b-col span="22"></b-col>
-        </b-row>
+        <div :style="{border:'1px solid black'}">
+            <b-row gutter="20">
+                <b-col :style="{paddingLeft:'10px',paddingRight:'10px'}"></b-col>
+                <b-col :style="{paddingLeft:'10px',paddingRight:'10px'}"></b-col>
+            </b-row>
+            <b-row>
+                <b-col span="2"></b-col>
+                <b-col span="22"></b-col>
+            </b-row>
+            <b-row>
+                <b-col span="4"></b-col>
+                <b-col span="19" offset="1"></b-col>
+            </b-row>
+        </div>
         <hr>
         <b-input value="张三"></b-input>
         <b-input value="李四" disabled></b-input>
