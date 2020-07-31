@@ -14,7 +14,6 @@
             margin: 20px;
         }
         .column {
-            width: 50%;
             height: 100px;
         }
         .colContent {
@@ -24,7 +23,6 @@
             border: 1px solid white;
         }
         .detail {
-            width: 20%;
             border: 1px solid greenyellow;
         }
     </style>
@@ -33,18 +31,20 @@
     <div id="app">
         <div>
             <b-row>
-                <b-col class="column">
+                <b-col class="column" span="2" :ipad="{span:'8'}" :narrow-pc="{span:'12'}"
+                ><div class="colContent"></div></b-col>
+                <b-col class="column" span="22" :ipad="{span:'15'}" :narrow-pc="{span:'12'}"
+                ><div class="colContent"></div></b-col>
+            </b-row>
+            <b-row>
+                <b-col class="column" span="12">
                     <b-row class="colContent" align="right">
-                        <b-col class="detail"></b-col>
-                        <b-col class="detail"></b-col>
-                        <b-col class="detail"></b-col>
+                        <b-col class="detail" span="5"></b-col>
+                        <b-col class="detail" span="5"></b-col>
+                        <b-col class="detail" span="5"></b-col>
                     </b-row>
                 </b-col>
-                <b-col class="column">
-                    <b-row class="colContent">
-
-                    </b-row>
-                </b-col>
+                <b-col class="column" span="12"><div class="colContent"></div></b-col>
             </b-row>
             <b-row>
                 <b-col class="column" span="2"><div class="colContent"></div></b-col>
@@ -55,8 +55,8 @@
                 <b-col class="column" span="19" offset="1"><div class="colContent"></div></b-col>
             </b-row>
             <b-row gutter="20">
-                <b-col class="column"><div class="colContent"></div></b-col>
-                <b-col class="column"><div class="colContent"></div></b-col>
+                <b-col class="column" span="12"><div class="colContent"></div></b-col>
+                <b-col class="column" span="12"><div class="colContent"></div></b-col>
             </b-row>
         </div>
         <hr>
