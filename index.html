@@ -13,22 +13,50 @@
         body{
             margin: 20px;
         }
+        .column {
+            width: 50%;
+            height: 100px;
+        }
+        .colContent {
+            background: #4a90e2;
+            width: 100%;
+            height: 100%;
+            border: 1px solid white;
+        }
+        .detail {
+            width: 20%;
+            border: 1px solid greenyellow;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-        <div :style="{border:'1px solid black'}">
+        <div>
+            <b-row>
+                <b-col class="column">
+                    <b-row class="colContent" align="right">
+                        <b-col class="detail"></b-col>
+                        <b-col class="detail"></b-col>
+                        <b-col class="detail"></b-col>
+                    </b-row>
+                </b-col>
+                <b-col class="column">
+                    <b-row class="colContent">
+
+                    </b-row>
+                </b-col>
+            </b-row>
+            <b-row>
+                <b-col class="column" span="2"><div class="colContent"></div></b-col>
+                <b-col class="column" span="22"><div class="colContent"></div></b-col>
+            </b-row>
+            <b-row>
+                <b-col class="column" span="4"><div class="colContent"></div></b-col>
+                <b-col class="column" span="19" offset="1"><div class="colContent"></div></b-col>
+            </b-row>
             <b-row gutter="20">
-                <b-col :style="{paddingLeft:'10px',paddingRight:'10px'}"></b-col>
-                <b-col :style="{paddingLeft:'10px',paddingRight:'10px'}"></b-col>
-            </b-row>
-            <b-row>
-                <b-col span="2"></b-col>
-                <b-col span="22"></b-col>
-            </b-row>
-            <b-row>
-                <b-col span="4"></b-col>
-                <b-col span="19" offset="1"></b-col>
+                <b-col class="column"><div class="colContent"></div></b-col>
+                <b-col class="column"><div class="colContent"></div></b-col>
             </b-row>
         </div>
         <hr>
