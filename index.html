@@ -25,10 +25,24 @@
         .detail {
             border: 1px solid greenyellow;
         }
+        .wrapper {height: 100vh;}
+        .header {background: #4a90e2;}
+        .content {background: #3a6fae;  }
+        .footer {background: #4a90e2;}
+        .sider {background: #4290ea;}
     </style>
 </head>
 <body>
     <div id="app">
+        <b-layout class="wrapper">
+            <b-header>Header</b-header>
+            <b-layout>
+                <b-sider>Sider</b-sider>
+                <b-content>Content</b-content>
+            </b-layout>
+            <b-footer>Footer</b-footer>
+        </b-layout>
+        <hr>
         <div>
             <b-row>
                 <b-col class="column" span="2" :ipad="{span:'8'}" :narrow-pc="{span:'12'}"
