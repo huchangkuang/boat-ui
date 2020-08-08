@@ -26,10 +26,8 @@
             border: 1px solid greenyellow;
         }
         .wrapper {height: 100vh;}
-        .header {background: #4a90e2;}
-        .content {background: #3a6fae;  }
-        .footer {background: #4a90e2;}
-        .sider {background: #4290ea;}
+        .header,.sider,.footer {background: #4a90e2;}
+        .content {background: #3a6fae;}
     </style>
 </head>
 <body>
@@ -74,6 +72,7 @@
             </b-row>
         </div>
         <hr>
+    <div>
         <b-input value="张三"></b-input>
         <b-input value="李四" disabled></b-input>
         <b-input value="王五" read-only></b-input>
@@ -91,6 +90,7 @@
             <b-button>按钮</b-button>
             <b-button icon="right" icon-position="right">下一页</b-button>
         </b-button-group>
+    </div>
     </div>
 <script src="./src/main.js"></script>
 </body>

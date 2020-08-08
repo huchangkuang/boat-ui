@@ -9,8 +9,10 @@
 </template>
 
 <script>
+import Icon from "./Icon";
   export default {
     name: "Button",
+    components: {Icon},
     props: {
       iconPosition: {
         type: String,
