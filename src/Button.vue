@@ -22,7 +22,8 @@ import Icon from "./Icon";
         }
       },
       loading: {
-        type: Boolean
+        type: Boolean,
+        default: false
       },
       icon: {}
     }

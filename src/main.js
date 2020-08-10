@@ -33,6 +33,7 @@ new Vue({
       loading1: false,
       loading2: false,
       loading3: false,
+      loading4: false,
       value1:"",
       value2:""
     }
@@ -42,7 +43,11 @@ new Vue({
       this.value2 = event
     },
     toast(){
-      this.$toast("我是message")
+      this.$toast("我是message",{
+        closeButton:{
+          text: "关闭"
+        }
+      })
     }
   }
 })
