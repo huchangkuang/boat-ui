@@ -1,11 +1,11 @@
 <template>
   <div class="toastWrapper">
-    <div class="toast">
+    <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
         <div v-else v-html="$slots.default[0]"></div>
       </div>
-      <span class="line"></span>
+      <span class="line" ref="line"></span>
       <span class="close" v-if="closeButton" @click="onClickClose">
       {{ closeButton.text }}
     </span>
@@ -40,13 +40,22 @@ export default {
     }
   },
   mounted() {
-    if (this.autoClose) {
-      setTimeout(() => {
-        this.close()
-      }, this.autoCloseDelay * 1000)
-    }
+    this.execAutoClose()
+    this.updateStyle()
   },
   methods: {
+    execAutoClose(){
+      if (this.autoClose) {
+        setTimeout(() => {
+          this.close()
+        }, this.autoCloseDelay * 1000)
+      }
+    },
+    updateStyle(){
+      this.$nextTick(()=>{
+        this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`
+      })
+    },
     close() {
       this.$el.remove()
       this.$destroy()
@@ -75,8 +84,11 @@ export default {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     min-height: 32px;
     line-height: 1.8;
-    padding: 0.5em 1em;
+    padding: 0 1em;
     border-radius: 4px;
+    .message {
+      padding: 0.5em 0;
+    }
     .line  {
       height: 100%;
       border-left: 1px solid #666;
@@ -84,7 +96,7 @@ export default {
     }
     .close {
       padding-left: .5em;
-      flex-wrap: nowrap;
+      white-space: nowrap;
     }
   }
 }
