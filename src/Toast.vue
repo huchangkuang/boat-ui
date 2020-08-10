@@ -71,6 +71,7 @@ export default {
     close() {
       this.$el.remove()
       this.$destroy()
+      this.$emit("close")
     },
     onClickClose(){
       this.close()
