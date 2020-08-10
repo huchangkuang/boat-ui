@@ -9,6 +9,8 @@ import Content from "./Content";
 import Sider from "./Sider";
 import Footer from "./Footer";
 import Header from "./Header";
+import Toast from "./Toast";
+import plugin from "./plugin";
 
 
 Vue.component("b-button",Button)
@@ -21,6 +23,8 @@ Vue.component("b-content",Content)
 Vue.component("b-sider",Sider)
 Vue.component("b-footer",Footer)
 Vue.component("b-header",Header)
+Vue.component("b-toast",Toast)
+Vue.use(plugin)
 
 new Vue({
   el: "#app",
@@ -36,6 +40,9 @@ new Vue({
   methods:{
     change(event){
       this.value2 = event
+    },
+    toast(){
+      this.$toast("我是message")
     }
   }
 })
