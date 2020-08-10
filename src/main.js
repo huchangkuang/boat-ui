@@ -46,7 +46,8 @@ new Vue({
       this.$toast("我是message",{
         closeButton:{
           text: "关闭"
-        }
+        },
+        position: "top"
       })
     }
   }

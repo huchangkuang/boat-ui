@@ -1,5 +1,5 @@
 <template>
-  <div class="toastWrapper">
+  <div class="toastWrapper" :class="positionClass">
     <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
@@ -37,11 +37,23 @@ export default {
     enableHtml: {
       type: Boolean,
       default: false
+    },
+    position: {
+      type: String,
+      default: "top",
+      validator(value){
+        return ["top","middle","bottom"].indexOf(value) >=0
+      }
     }
   },
   mounted() {
     this.execAutoClose()
     this.updateStyle()
+  },
+  computed: {
+    positionClass(){
+      return {[`position-${this.position}`]:true}
+    }
   },
   methods: {
     execAutoClose(){
@@ -73,9 +85,21 @@ export default {
 <style lang="scss" scoped>
 .toastWrapper {
   position: fixed;
+  &.position-top {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+  &.position-middle {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%,-50%);
+  }
+  &.position-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .toast {
     display: flex;
     align-items: center;
