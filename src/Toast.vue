@@ -29,7 +29,7 @@ export default {
       type: Object,
       default: () => {
         return {
-          text: "",
+          text: "关闭",
           callback: undefined
         }
       }
@@ -84,23 +84,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes fade-in {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes slide-up {
+  0%{opacity: 0;transform: translateY(-100%)}
+  100%{opacity: 1;transform: translateY(0%)}
+}
+@keyframes slide-down {
+  0%{opacity: 0;transform: translateY(100%)}
+  100%{opacity: 1;transform: translateY(0%)}
+}
 .toastWrapper {
   position: fixed;
-  &.position-top {
-  top: 0;
   left: 50%;
   transform: translateX(-50%);
+  &.position-top {
+  top: 0;
+    .toast {
+      animation: slide-up .5s;
+    }
 }
   &.position-middle {
     top: 50%;
-    left: 50%;
-    transform: translateX(-50%,-50%);
+    transform: translate(-50%,-50%);
+    .toast {
+      animation: fade-in .5s;
+    }
   }
   &.position-bottom {
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    .toast {
+      animation: slide-down .5s;
+    }
   }
+
   .toast {
     display: flex;
     align-items: center;

@@ -47,7 +47,7 @@ new Vue({
         closeButton:{
           text: "关闭"
         },
-        position: "top"
+        position: "middle"
       })
     }
   }
