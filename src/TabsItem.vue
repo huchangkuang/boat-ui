@@ -15,19 +15,24 @@ export default {
   },
   computed: {
     activeClass() {
-      return {active: this.active}
+      return {active: this.active,disable: this.disable}
     }
   },
   props: {
     name: {
       type: String | Number,
       require: true
+    },
+    disable: {
+      type: Boolean
     }
   },
   methods: {
     selected() {
-      this.eventBus.$emit("update:selected", this.name)
-    }
+      if (!this.disable){
+        this.eventBus.$emit("update:selected", this.name,this)
+      }
+    },
   },
   created() {
     this.eventBus.$on("update:selected",(name)=>{
@@ -42,7 +47,11 @@ export default {
   margin: 0 1em;
   padding: 0.5em;
   &.active {
-    background: red;
+    color: #6baaff;
+  }
+  &.disable {
+    color: #999999;
+    cursor: not-allowed;
   }
 }
 </style>

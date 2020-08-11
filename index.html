@@ -10,11 +10,10 @@
       *, ::before, ::after {
         box-sizing: border-box;
       }
-
-      body {
-        margin: 20px;
+      * {
+        margin: 0;
+        padding: 0;
       }
-
       .column {
         height: 100px;
       }
@@ -50,6 +49,7 @@
             <b-tabs-head>
                 <b-tabs-item name="sport">体育</b-tabs-item>
                 <b-tabs-item name="game">游戏</b-tabs-item>
+                <b-tabs-item name="book" disable>书籍</b-tabs-item>
                 <template slot="actions">
                     <b-button>设置</b-button>
                 </template>
@@ -57,6 +57,7 @@
             <b-tabs-body>
                 <b-tabs-pane name="sport">内容：体育</b-tabs-pane>
                 <b-tabs-pane name="game">内容：游戏</b-tabs-pane>
+                <b-tabs-pane name="book">内容：书籍</b-tabs-pane>
             </b-tabs-body>
         </b-tabs>
     </div>
