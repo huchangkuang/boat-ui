@@ -19,6 +19,7 @@ name: "TabsHead",
 .tabs-head {
   display:flex;
   align-items: center;
+  border: 1px solid red;
   > .actions-wrapper {
     margin-left: auto;
   }

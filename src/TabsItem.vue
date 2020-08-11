@@ -39,8 +39,8 @@ export default {
 
 <style lang="scss" scoped>
 .tabs-item {
-  margin: 0 2em;
-
+  margin: 0 1em;
+  padding: 0.5em;
   &.active {
     background: red;
   }
