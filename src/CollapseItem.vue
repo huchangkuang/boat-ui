@@ -1,30 +1,44 @@
 <template>
-    <div class="collapse-item" @click="xxx">
-      <div class="title">{{title}}</div>
-      <div class="content" v-if="open">
-        <slot></slot>
-      </div>
+  <div class="collapse-item" @click="toggle">
+    <div class="title">{{ title }}</div>
+    <div class="content" v-if="open">
+      <slot></slot>
     </div>
+  </div>
 </template>
 
 <script>
-export default{
-    name:"CollapseItem",
-  data(){
-    return {
-      open: false
+export default {
+  name: "CollapseItem",
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
     }
   },
-  props: {
-      title: {
-        type: String,
-        require: true
-      }
+  data() {
+    return {
+      open: false,
+    }
+  },
+  inject: ['eventBus'],
+  mounted() {
+    this.eventBus && this.eventBus.$on('update:selected', (names) => {
+      this.open = names.indexOf(this.name) >= 0;
+    })
   },
   methods: {
-      xxx(){
-        this.open = !this.open
+    toggle() {
+      if (this.open) {
+        this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
+      } else {
+        this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
       }
+    },
   }
 }
 </script>

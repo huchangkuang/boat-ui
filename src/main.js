@@ -52,7 +52,8 @@ new Vue({
       loading4: false,
       value1:"",
       value2:"",
-      selectedTab: "sport"
+      selectedTab: "sport",
+      selectedArray: ["1"]
     }
   },
   methods:{
