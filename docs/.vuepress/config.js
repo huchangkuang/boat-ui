@@ -6,7 +6,7 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: '文档', link: '/install/' },
-      { text: 'GitHub', link: '' },
+      { text: 'GitHub', link: 'https://github.com/huchangkuang/boat-ui' },
     ],
     sidebar: [
       {
