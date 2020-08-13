@@ -1,4 +1,5 @@
 module.exports = {
+  base: "/boat-ui-official-website/",
   title: 'boat-ui',
   description: '基于Vue开发好用的UI框架',
   themeConfig: {
