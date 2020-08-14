@@ -37,7 +37,7 @@ import Icon from "./Icon";
         0%{ transform: rotate(0deg)}
         100%{transform: rotate(360deg)}
     }
-    button {
+    .b-button {
         font-size: $font-size;
         height: $button-height;
         padding: 0 1em;
@@ -55,12 +55,12 @@ import Icon from "./Icon";
             animation: spin 1s infinite linear;
         }
 
-        > .Icon {order: 1;margin-right: 0.5em}
+        > .b-icon {order: 1;margin-right: 0.5em}
 
         > .button-content {order: 2;}
 
         &.icon-right {
-            .Icon {
+            .b-icon {
                 order: 2;
                 margin-left: .5em;margin-right: 0;
             }
