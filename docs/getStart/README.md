@@ -15,7 +15,7 @@ import "boat-ui/dist/index.css"
 <script>
     import {Button} from "boat-ui"
     export default {
-      components: {"b-button",Button}
+      components: {"b-button":Button}
     }
 </script>
 ```
