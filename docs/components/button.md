@@ -71,4 +71,9 @@ export default {
     </div>
 </template>
 ```
-
+## API参数
+|属性|说明|类型|默认值|可选值|
+|:---:|:---:|:---:|:---:|:---:|
+|icon|给按钮添加图标|String|-|setting;left;right;search;upload;<br/>download;information;error;heart|
+|iconPosition|改变图标位置|String|left|left;right|
+|loading|给按钮添加加载动画|Boolean|false|false;true|
