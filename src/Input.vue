@@ -1,6 +1,6 @@
 <template>
     <div class="input-wrapper" :class="{'error':error}">
-        <input type="text" :value="value" :disabled="disabled" :readonly="readOnly"
+        <input type="text" :value="value" :disabled="disabled" :readonly="readOnly" :placeholder="placeholder"
                @change="$emit('change',$event.target.value)"
                @input="$emit('input',$event.target.value)"
                @focus="$emit('focus',$event.target.value)"
@@ -31,6 +31,9 @@ import Icon from "./Icon";
       },
       error: {
         type: String
+      },
+      placeholder:{
+        type:String
       }
     }
   }

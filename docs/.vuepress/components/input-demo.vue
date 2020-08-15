@@ -1,25 +1,3 @@
----
-title: input-输入框
----
-
-# input-输入框
-通过鼠标或键盘输入内容，是最基础的表单域的包装。
-## 组件注册
-```vue
-<script>
-    import {Input} from "boat-ui"
-    export default {
-      components: {"b-input":Input}
-    }
-</script>
-```
-## 基本使用
-使用方式：
-<ClientOnly>
-  <input-demo></input-demo>
-</ClientOnly>
-代码：
-```vue
 <template>
   <div>
     <b-input value="默认输入框"></b-input>
@@ -39,7 +17,11 @@ title: input-输入框
 </template>
 
 <script>
+import Input from "../../../src/Input";
+
 export default {
+  name: "input-demo",
+  components: {"b-input": Input},
   data() {
     return {
       value1: "",
@@ -53,13 +35,7 @@ export default {
   }
 }
 </script>
-```
-## API参数
-|属性|说明|类型|默认值|可选值|
-|:---:|:---:|:---:|:---:|:---:|
-|value|给输入框绑定值|String|-|-|
-|placeholder|占位符|String|-|-|
-|disabled|设置输入框禁用|Boolean|false|false;true|
-|readOnly|设置输入框只读|Boolean|false|false;true|
-|error|设置错误警告|String|-|-|
-|v-model|输入框支持v-model语法|-|-|-|
+
+<style lang="scss" scoped>
+
+</style>
