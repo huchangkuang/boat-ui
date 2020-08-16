@@ -6,12 +6,14 @@
     <b-input value="只读" read-only></b-input>
     <b-input value="错误提示" error="请输入正确信息"></b-input>
     <div>
+      <div>双向绑定</div>
       <b-input v-model="value1" placeholder="支持v-model"></b-input>
-      <span>{{ value1 }}</span>
+      <span>value1:{{ value1 }}</span>
     </div>
     <div>
+      <div>change事件</div>
       <b-input :value="value2" @change="change" placeholder="支持change事件"></b-input>
-      <span>{{ value2 }}</span>
+      <span>value2:{{ value2 }}</span>
     </div>
   </div>
 </template>
@@ -24,8 +26,8 @@ export default {
   components: {"b-input": Input},
   data() {
     return {
-      value1: "",
-      value2: ""
+      value1: "1",
+      value2: "2"
     }
   },
   methods: {
