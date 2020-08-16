@@ -1,5 +1,5 @@
 ---
-title: grid-栅格系统
+title: grid-网格系统
 ---
 
-# grid-栅格系统
+# grid-网格系统

@@ -15,7 +15,7 @@ footer: MIT Licensed | Copyright © 2020-qingzhou
 
 # 介绍
 boat-ui是一个基于Vue开发的UI框架，目前提供了[button-按钮](/components/button)、[input-输入框](/components/input)、[layout-布局](/components/layout)、
-[tabs-标签](/components/tabs)、[grid-栅格系统](/components/grid)、[toast-弹窗](/components/toast)、[popover-气泡卡片](/components/popover)、[collapse-手风琴](/components/collapse)组件，
+[tabs-标签](/components/tabs)、[grid-网格系统](/components/grid)、[toast-弹窗](/components/toast)、[popover-气泡卡片](/components/popover)、[collapse-手风琴](/components/collapse)组件，
 更多组件尚在开发中。
 ## 开发目的
 boat-ui以个人学习与分享为目的，希望通过造轮子可以提升个人在前端开发中的技能，同时方便更多使用Vue框架的使用者。
