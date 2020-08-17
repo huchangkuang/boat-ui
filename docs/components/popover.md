@@ -78,12 +78,6 @@ title: popover-气泡卡片
     </div>    
   </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
 ```
 ## API参数
 |属性|说明|类型|默认值|可选值|
