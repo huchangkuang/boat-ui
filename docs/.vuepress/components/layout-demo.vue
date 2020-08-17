@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout-demo">
     <div class="normal">
       <div>默认布局</div>
       <b-layout>
@@ -17,6 +17,24 @@
           <b-content class="h-content"></b-content>
         </b-layout>
         <b-footer class="h-footer"></b-footer>
+      </b-layout>
+      <div>侧边栏靠右</div>
+      <b-layout>
+        <b-header class="h-header"></b-header>
+        <b-layout>
+          <b-content class="h-content"></b-content>
+          <b-sider class="h-sider"></b-sider>
+        </b-layout>
+        <b-footer class="h-footer"></b-footer>
+      </b-layout>
+      <div>左右布局</div>
+      <b-layout class="left">
+        <b-sider class="h-sider"></b-sider>
+        <b-layout>
+          <b-header class="h-header"></b-header>
+          <b-content class="h-content"></b-content>
+          <b-footer class="h-footer"></b-footer>
+        </b-layout>
       </b-layout>
     </div>
   </div>
@@ -42,51 +60,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.layout {
-  .normal {
-    .n-header {
-      background: #4a90e2;
-      width: 100%;
-      height: 50px;
-    }
-
-    .n-content {
-      background: #3a6fae;
-      width: 100%;
-      height: 100px;
-    }
-
-    .n-footer {
-      background: #4a90e2;
-      width: 100%;
-      height: 50px;
-    }
+.layout-demo {
+  .header, .footer {
+    background: #7dbcea;
+    width: 100%;
+    height: 50px;
   }
 
-  .hasSider {
-    .h-header {
-      background: #4a90e2;
+  .content {
+    background: #108ee9;
+    width: 100%;
+    height: 100px;
+  }
+
+  .sider {
+    background: #3ba0e9;
+    width: 20%;
+    height: 100px;
+  }
+
+  .normal {
+    .n-content {
       width: 100%;
-      height: 50px;
     }
-
-    .h-sider {
-      background: #3a6fae;
-      width: 20%;
-      height: 100px;
-    }
-
-    .h-content {
-      background: #0c56ac;
-      width: 80%;
-      height: 100px;
-    }
-
-    .h-footer {
-      background: #4a90e2;
-      width: 100%;
-      height: 50px;
-    }
+  }
+  .left {
+    .sider{
+      height: 200px;}
   }
 }
 </style>
