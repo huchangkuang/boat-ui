@@ -1,25 +1,3 @@
----
-title: popover-气泡卡片
----
-
-# popover-气泡卡片
-点击/鼠标移入元素，弹出气泡式的卡片浮层。
-## 组件注册
-```vue
-<script>
-    import {Popover} from "boat-ui"
-    export default {
-      components: {"b-popover":Popover}
-    }
-</script>
-```
-## 基本使用
-使用方式：
-<ClientOnly>
-  <popover-demo></popover-demo>
-</ClientOnly>
-代码：
-```vue
 <template>
   <div>
     <div class="click">
@@ -75,19 +53,20 @@ title: popover-气泡卡片
         </template>
         <b-button>右边弹出</b-button>
       </b-popover>
-    </div>    
+    </div>
   </div>
 </template>
 
 <script>
-export default {
+import Popover from "../../../src/Popover";
+import {Button} from "../../../index";
 
+export default {
+  name: "popover-demo",
+  components: {"b-popover": Popover,"b-button":Button}
 }
 </script>
-```
-## API参数
-|属性|说明|类型|默认值|可选值|
-|:---:|:---:|:---:|:---:|:---:|
-|position|设置弹出位置|String|top|[top, bottom, left, right]|
-|trigger|设置触发方式|String|click|[click, hover]|
 
+<style lang="scss" scoped>
+
+</style>
