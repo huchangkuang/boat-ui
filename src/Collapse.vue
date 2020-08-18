@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .collapse {
-  border: 1px solid gray;
+  border: 1px solid #dddddd;
   border-radius: 4px;
 
   & :first-child :first-child {

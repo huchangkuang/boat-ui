@@ -1,6 +1,10 @@
 <template>
   <div class="collapse-item" @click="toggle">
-    <div class="title">{{ title }}</div>
+    <div class="titleWrapper">
+      <div class="title">{{ title }}</div>
+      <Icon v-if="!open" icon="right"/>
+      <Icon v-else icon="down"/>
+    </div>
     <div class="content" v-if="open">
       <slot></slot>
     </div>
@@ -8,8 +12,11 @@
 </template>
 
 <script>
+import Icon from "./Icon";
+
 export default {
   name: "CollapseItem",
+  components:{Icon},
   props: {
     title: {
       type: String,
@@ -45,12 +52,19 @@ export default {
 
 <style lang="scss" scoped>
 .collapse-item {
-  .title {
+  .titleWrapper {
     min-height: 32px;
-    border: 1px solid gray;
+    border: 1px solid #dddddd;
     margin-top: -1px;
     margin-left: -1px;
     margin-right: -1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 10px;
+  }
+  .content {
+    padding: 2px 10px;
   }
 
 }
