@@ -27,23 +27,81 @@ title: tabs-标签
 代码：
 ```vue
 <template>
-  <div>
-    
+  <div class="wrapper">
+    默认标签
+    <b-tabs :selected="selectedTab">
+      <b-tabs-head>
+        <b-tabs-item name="sport">体育</b-tabs-item>
+        <b-tabs-item name="game">游戏</b-tabs-item>
+        <b-tabs-item name="book">书籍</b-tabs-item>
+      </b-tabs-head>
+      <b-tabs-body>
+        <b-tabs-pane name="sport">内容：体育</b-tabs-pane>
+        <b-tabs-pane name="game">内容：游戏</b-tabs-pane>
+        <b-tabs-pane name="book">内容：书籍</b-tabs-pane>
+      </b-tabs-body>
+    </b-tabs>
+    禁用标签
+    <b-tabs :selected="selectedTab">
+      <b-tabs-head>
+        <b-tabs-item name="sport">体育</b-tabs-item>
+        <b-tabs-item name="game">游戏</b-tabs-item>
+        <b-tabs-item name="book" disable>书籍</b-tabs-item>
+      </b-tabs-head>
+      <b-tabs-body>
+        <b-tabs-pane name="sport">内容：体育</b-tabs-pane>
+        <b-tabs-pane name="game">内容：游戏</b-tabs-pane>
+        <b-tabs-pane name="book">内容：书籍</b-tabs-pane>
+      </b-tabs-body>
+    </b-tabs>
+    附加按钮
+    <b-tabs :selected="selectedTab">
+      <b-tabs-head>
+        <b-tabs-item name="sport">体育</b-tabs-item>
+        <b-tabs-item name="game">游戏</b-tabs-item>
+        <b-tabs-item name="book">书籍</b-tabs-item>
+        <template slot="actions">
+          <b-button>设置</b-button>
+        </template>
+      </b-tabs-head>
+      <b-tabs-body>
+        <b-tabs-pane name="sport">内容：体育</b-tabs-pane>
+        <b-tabs-pane name="game">内容：游戏</b-tabs-pane>
+        <b-tabs-pane name="book">内容：书籍</b-tabs-pane>
+      </b-tabs-body>
+    </b-tabs>
   </div>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      selectedTab: "sport"
+    }
+  }
 }
 </script>
+
+<style>
+.wrapper > .tabs {
+  margin: 5px 0;
+  border: 1px solid #ebedf0;
+  border-radius: 4px;
+}
+</style>
 ```
 ## API参数
+### Tabs
 |属性|说明|类型|默认值|可选值|
 |:---:|:---:|:---:|:---:|:---:|
-|value|给输入框绑定值|String|-|-|
-|placeholder|占位符|String|-|-|
-|disabled|设置输入框禁用|Boolean|false|false;true|
-|readOnly|设置输入框只读|Boolean|false|false;true|
-|error|设置错误警告|String|-|-|
-|v-model|输入框支持v-model语法|-|-|-|
+|selected|必传值，给定初始选定的标签项|String|-|-|
+### TabsItem
+|属性|说明|类型|默认值|可选值|
+|:---:|:---:|:---:|:---:|:---:|
+|name|为每项标签传名字，方便标签与内容对应|[String,Number]|-|-|
+|disable|禁用该标签|Boolean|-|-|
+### TabsPane
+|属性|说明|类型|默认值|可选值|
+|:---:|:---:|:---:|:---:|:---:|
+|name|为每项内容传名字，方便标签与内容对应|[String,Number]|-|-|
