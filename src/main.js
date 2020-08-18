@@ -32,6 +32,7 @@ Vue.component("b-sider",Sider)
 Vue.component("b-footer",Footer)
 Vue.component("b-header",Header)
 Vue.component("b-toast",Toast)
+Vue.use(plugin)
 Vue.component("b-tabs",Tabs)
 Vue.component("b-tabs-head",TabsHead)
 Vue.component("b-tabs-body",TabsBody)
@@ -40,7 +41,6 @@ Vue.component("b-tabs-pane",TabsPane)
 Vue.component("b-popover",Popover)
 Vue.component("b-collapse",Collapse)
 Vue.component("b-collapse-item",CollapseItem)
-Vue.use(plugin)
 
 new Vue({
   el: "#app",
@@ -65,7 +65,7 @@ new Vue({
         closeButton:{
           text: "关闭"
         },
-        position: "middle"
+        position: "top"
       })
     }
   }

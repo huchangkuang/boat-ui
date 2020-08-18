@@ -17,5 +17,6 @@ import TabsBody from "./src/TabsBody";
 import TabsPane from "./src/TabsPane";
 import TabsItem from "./src/TabsItem";
 import Toast from "./src/Toast";
+import plugin from "./src/plugin";
 export {ButtonGroup,Button,Row,Col,Input,Layout,Header,Footer,Content,Sider,Popover,
-  Collapse, CollapseItem,Toast,TabsItem,TabsPane,TabsBody,TabsHead,Tabs}
+  Collapse, CollapseItem,Toast,TabsItem,TabsPane,TabsBody,TabsHead,Tabs,plugin}
