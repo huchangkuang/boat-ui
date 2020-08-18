@@ -1,7 +1,7 @@
 {
   "name": "boat-ui",
-  "version": "0.0.4",
-  "description": "这是一个UI框架",
+  "version": "0.0.5",
+  "description": "这是一个基于Vue开发的易用UI框架",
   "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
