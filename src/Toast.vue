@@ -2,7 +2,7 @@
   <div class="toastWrapper" :class="positionClass">
     <div class="toast" ref="toast">
       <div class="message">
-        <slot v-if="!enableHtml"></slot>
+        <slot v-if="enableHtml"></slot>
         <div v-else v-html="$slots.default[0]"></div>
       </div>
       <span class="line" ref="line"></span>
