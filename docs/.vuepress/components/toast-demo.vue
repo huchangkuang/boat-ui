@@ -1,27 +1,3 @@
----
-title: toast-弹窗
----
-
-# toast-弹窗
-触发事件后得到一个弹窗反馈，可自定义弹窗弹出位置和显示时间。
-## 组件注册
-```vue
-<script>
-    import {Toast} from "boat-ui"
-    import Vue from "vue"
-    Vue.use(plugin)
-    export default {
-      components: {"b-toast":Toast}
-    }
-</script>
-```
-## 基本使用
-使用方式：
-<ClientOnly>
-  <toast-demo></toast-demo>
-</ClientOnly>
-代码：
-```vue
 <template>
   <div>
     <div class="position">
@@ -41,7 +17,12 @@ title: toast-弹窗
 </template>
 
 <script>
+import Vue from "vue"
+import {Button, plugin, Toast} from "../../../index";
+Vue.use(plugin)
 export default {
+  name: "toast-demo",
+  components: {"b-toast": Toast,"b-button":Button},
   methods:{
     top(){
       this.$toast("上方提示")
@@ -67,12 +48,7 @@ export default {
   }
 }
 </script>
-```
-## API参数
-|属性|说明|类型|默认值|可选值|
-|:---:|:---:|:---:|:---:|:---:|
-|autoClose|设置是否自动关闭|Boolean|true|false;true|
-|autoCloseDelay|设置自动关闭时间，单位秒|Number|3|-|
-|closeButton|添加提示弹窗内容,传入一个对象，包含文本和回调函数|Object|{text:"关闭",callback: undefined}|-|
-|enableHtml|提示内容是否可以使用HTML语法|Boolean|false|false;true|
-|position|设置弹窗位置|String|top|[top,middle,bottom]|
+
+<style lang="scss" scoped>
+
+</style>
